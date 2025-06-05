@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      color: #333;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-size: 3em;
+      margin-top: 40px;
+    }
+    h2 {
+      font-size: 2em;
+      color: #d6336c;
+    }
+    p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    /* Slideshow styles */
+    .slideshow {
+      max-width: 350px;
+      margin: 30px auto;
+      position: relative;
+    }
+    .slide {
+      width: 100%;
+      display: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎂 Happy Birthday, Kavya! 🎉</h1>
+  <img src="C:\Users\ANSHIYO\OneDrive\Desktop\birthday wish\Images\ecc07765-cae8-42d7-af6f-cb610ad1cd9b.jpg" alt="Birthday Cake">
+  <h2>You are one in a million!</h2>
+<p>
+  Hey Kavya! 🎂<br><br>
+  Happy Birthday to the world’s most awesome, fabulous, and a Poised human! 🎉<br>
+  I hope your day is filled with cake, chaos, and at least one person singing off-key just for you! 😜<br><br>
+
+  Now, I know what you're thinking... “Where’s this person who always promises to hang out but disappears like my charger when I need it?”<br>
+  Well... guilty as charged 🙈 I’m really sorry for not spending enough time with you lately. Life turned into a circus and I forgot I was supposed to be the clown hanging out with you. 🤡<br><br>
+
+  But hey, better late than never, right? Consider this website my digital hug, my virtual cupcake, and my way of saying – I haven’t forgotten how awesome you are! 💻🧁✨<br><br>
+
+  Let's catch up soon – I’ll bring jokes, snacks, and my full attention (or at least 97% of it). Until then, party hard, laugh louder, and save me a piece of cake! 🍰<br><br>
+
+  With all the banter and love,<br>
+  Anshiyo 🎈
+</p>
+
+
+  <!-- Slideshow Section -->
+  <h2>Our Special Moments 📸</h2>
+  <div class="slideshow">
+    <img src="C:\Users\ANSHIYO\OneDrive\Desktop\birthday wish\Images\6dc3f654-1c9b-458a-b141-e47daf93a6a5.jpg" class="slide" style="display: block;">
+    <img src="C:\Users\ANSHIYO\OneDrive\Desktop\birthday wish\Images\25a8f89a-2584-4318-9840-53cc75eec7a0.jpg" class="slide">
+    <img src="C:\Users\ANSHIYO\OneDrive\Desktop\birthday wish\Images\880a8068-f69d-497d-914b-23e3f0612d72.jpg" class="slide">
+    <img src="C:\Users\ANSHIYO\OneDrive\Desktop\birthday wish\Images\091515a5-7216-46e7-b878-3a213135bae9.jpg" class="slide">
+    <img src="C:\Users\ANSHIYO\OneDrive\Desktop\birthday wish\Images\af63b310-f9e3-4709-993c-bb1301affbc1.jpg" class="slide">
+    <img src="C:\Users\ANSHIYO\OneDrive\Desktop\birthday wish\Images\dff3f50f-6dad-4423-94c6-8e68a83ef12f.jpg" class="slide">
+    <img src="C:\Users\ANSHIYO\OneDrive\Desktop\birthday wish\Images\ed25e784-670b-4436-af59-ffa0c0d7c5c5 - Copy.jpg" class="slide">
+  </div>
+
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-buddy.mp3" type="audio/mp3">
+    Your browser does not support the audio tag.
+  </audio>
+
+  <!-- Confetti -->
+  <canvas class="confetti" id="confetti"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    const duration = 10 * 1000;
+    const animationEnd = Date.now() + duration;
+    const confetti = window.confetti;
+
+    (function frame() {
+      confetti({
+        particleCount: 3,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+      });
+      confetti({
+        particleCount: 3,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+      });
+
+      if (Date.now() < animationEnd) {
+        requestAnimationFrame(frame);
+      }
+    })();
+  </script>
+
+  <!-- Slideshow Script -->
+  <script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlides() {
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 2500); // Change image every 2.5s
+    }
+
+    showSlides();
+  </script>
+
+</body>
+</html>
